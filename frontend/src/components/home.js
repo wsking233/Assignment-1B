@@ -7,6 +7,10 @@ class home extends Component {
     window.location.href = "/articleSearch";
   }
 
+  clickToSubmit() {
+    window.location.href = "/submit";
+  }
+
   render() {
     return (
       <div className="home">
@@ -26,6 +30,9 @@ class home extends Component {
             {/*link to search page*/}
             <button className="btn" onClick={this.clickToSearchPage.bind(this)}>
               <p>Start to Search</p>
+            </button>
+            <button className="btn" onClick={this.clickToSubmit.bind(this)}>
+              <p>Start to Submit</p>
             </button>
           </div>
         </div>
