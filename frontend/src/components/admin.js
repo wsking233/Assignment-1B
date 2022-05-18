@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 
-class submit extends Component {
+class search extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,47 +25,28 @@ class submit extends Component {
           </ul>
         </div>
         <div className="container">
-          <h1 className="title">Submit an Article</h1>
+          <h1 className="title">Admin System Page</h1>
           <br />
-          {/*title lable*/}
-          <label>Title: </label>
+          {/*Admin User Name input*/}
+          <label>Admin User Name: </label>
           <input  
           className="textbox" 
           onChange={this.handleInputChanged.bind(this)} 
            />
-          <br /><br />
-          {/*author lable*/}
-          <label>Author: </label>
-          <input 
-          className="textbox"
-          onChange={this.handleInputChanged.bind(this)}
-           />
-          <br /><br />
-          {/*year lable*/}
-          <label>Year: </label>
-          <input
-          className="textbox" 
-          onChange={this.handleInputChanged.bind(this)} 
-           />
-          <br /><br />
-          {/*source lable*/}
-          <label>Source: </label>
-          <input className="textbox"
-          onChange={this.handleInputChanged.bind(this)}
-           /> 
-          <br /><br />  
-          {/*url lable*/}       
-          <label>Url: </label>
+            <br />
+            <br />
+            {/*Admin User Name input*/}
+           <label>Password: </label>
           <input  
           className="textbox" 
           onChange={this.handleInputChanged.bind(this)} 
            />
         </div>
         <div>
-            <button className="btn">Submit</button>
+            <button className="btn">Login</button>
         </div>
       </div>
     );
   }
 }
-export default submit;
+export default search;

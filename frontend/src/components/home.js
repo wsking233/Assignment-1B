@@ -10,7 +10,6 @@ class home extends Component {
   clickToSubmit() {
     window.location.href = "/submit";
   }
-
   render() {
     return (
       <div className="home">
@@ -19,6 +18,9 @@ class home extends Component {
             {/*link to home page*/}
             <li className="navbtn">
               <a href="/">Return to Home Page</a>
+            </li>
+            <li className="navbtn">
+              <a href="/admin">Admin</a>
             </li>
           </ul>
         </div>
