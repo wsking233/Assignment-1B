@@ -1,23 +1,27 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './App.css';
 
-import Homepage from './components/home';
-import Searchpage from './components/articleSearch'
-import Submitpage from './components/submit'
-import adminpage from './components/admin'
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0,
+    }
+  }
+
+  makeIncrementer = amount => () =>
+    this.setState(prevState => ({
+      count: prevState.count + amount,
+    }));
+
+  increment = this.makeIncrementer(1);
+
   render() {
     return (
-      <Router>
-        <div>
-          <Route exact path='/' component={Homepage} />
-          <Route path='/articleSearch' component={Searchpage}/>
-          <Route path='/submit' component={Submitpage}/>
-          <Route path='/admin' component={adminpage} />
-        </div>
-      </Router>
-    );
+      <div>
+        <p>Count: {this.state.count}</p>
+        <button className="increment" onClick={this.increment}>Increment count</button>
+      </div>
+    )
   }
 }
 
