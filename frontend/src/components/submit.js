@@ -56,6 +56,8 @@ class submit extends Component {
       }
 
       axios.post('http://localhost:4000/app/submit', submit)
+        .then(response => console.log(response.data))
+        alert("the article has been update")
 
       this.setState({
         title: "",
@@ -65,6 +67,7 @@ class submit extends Component {
         url: ""
       })
     }
+
   render() {
     return (
       <div className="home">
