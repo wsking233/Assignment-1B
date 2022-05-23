@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../App.css";
+import axios from "axios";
 
 class submit extends Component {
   constructor(props) {
@@ -43,13 +44,26 @@ class submit extends Component {
       });
     }
 
-    handleSubmit(event){
-      alert("Title is: "+this.state.title);
-      alert("Author is: "+this.state.title);
-      alert("Year is: "+this.state.title);
-      alert("Source is: "+this.state.title);
-      alert("URL is: "+this.state.title);
-      event.preventDefault();
+    onSubmit(event){
+      event.preventDefault()
+
+      const submit = {
+        title: this.state.title,
+        author: this.state.author,
+        year: this.state.year,
+        source: this.state.source,
+        url: this.state.url,
+      }
+
+      axios.post('http://localhost:4000/app/submit', submit)
+
+      this.setState({
+        title: "",
+        author: "",
+        year: "",
+        source: "",
+        url: ""
+      })
     }
   render() {
     return (
@@ -65,7 +79,7 @@ class submit extends Component {
           <h1 className="title">Submit an Article</h1>
           <br />
           {/*title lable*/}
-          <form onSubmit={this.handleSubmit.bind(this)}>
+          <form onSubmit={this.onSubmit.bind(this)}>
           <label>Title: </label>
           <input  
           className="textbox" 
